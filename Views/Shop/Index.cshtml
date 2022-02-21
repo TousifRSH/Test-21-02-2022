@@ -1,0 +1,35 @@
+﻿@model List<BoutiqueShopTest.Models.ShopEntity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>WelCome Edit Deatils Here</h2>
+<body>
+
+
+    <table class="table">
+        <tr>
+            <th>ShopID</th>
+            <th>DressName</th>
+            <th>Cost</th>
+            <th>Color</th>
+            <th>Options</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ShopID</td>
+                <td>@item.DressName</td>
+                <td>@item.Price</td>
+                <td>@item.Color</td>
+
+                <td>@Html.ActionLink("Edit","Changes",new { id = item.ShopID})</td>
+                <td>@Html.ActionLink("Remove","Delete",new { id=item.ShopID})</td>
+            </tr>
+        }
+
+    </table>
+
+</body>
+
